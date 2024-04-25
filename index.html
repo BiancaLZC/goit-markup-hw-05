@@ -80,7 +80,7 @@
               EFFECTIVE SOLUTIONS FOR<br />
               YOUR BUSINESS
             </h1>
-            <button class="hero-section__btn" type="button">
+            <button data-modal-open class="hero-section__btn" type="button">
               Request our service
             </button>
           </div>
@@ -157,28 +157,42 @@
           <div>
             <h2 class="custom-h2">What we do</h2>
           </div>
+          <div class="what-we-do">
           <div class="img-box">
-            <img
+            <div class="box-name">
+              <p>DESKTOP APPS</p>
+            </div>
+            <img 
               src="./images/box-1.jpg"
               alt="Person typing on a keyboard while looking at a diagram"
               width="370"
               height="294"
             />
-            <img
+          </div>
+           <div class="img-box">
+            <div class="box-name">
+              <p>Mobile APPS</p>
+            </div>
+            <img 
               src="./images/box-2.jpg"
               alt="Person holding a smartphone in one hand and working on a laptop with the other"
               width="370"
               height="294"
             />
-            <img
+            </div>
+            <div class="img-box">
+            <div class="box-name">
+              <p>DESIGN SOLUTIONS</p>
+            </div>
+            <img 
               src="./images/box-3.jpg"
               alt="Person holding a pen in their right hand while examining a color picker on a tablet screen"
               width="370"
               height="294"
             />
+            </div>
           </div>
-        </div>
-      </section>
+       </section>
 
       <!--Team section-->
       <section class="team-section" id="portofolio">
@@ -495,5 +509,12 @@
         </div>
       </section>
     </footer>
+    <div data-modal class="is-hidden">
+      <div data-modal-content>
+        <h2>Leave your information and we'll call you back</h2>
+        <button data-modal-close type="button">X</button>
+      </div>
+    </div>
+    <script src="./modal.js"></script>
   </body>
 </html>

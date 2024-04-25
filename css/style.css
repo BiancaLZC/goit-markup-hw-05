@@ -48,6 +48,7 @@
   margin-left: 0;
   margin-right: auto;
 }
+
 .header__nav-list {
   display: flex;
   gap: 50px;
@@ -73,6 +74,19 @@
   font-weight: 500;
   line-height: 16.41px;
   font-size: 14px;
+  position: relative;
+}
+.nav-link:hover:after,
+.nav-link:active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 40px;
+  left: 0;
+  height: 5px;
+  border-radius: 2px;
+  background-color: var(--blue);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header__nav-links {
   display: flex;
@@ -90,17 +104,30 @@
   color: var(--light-black);
   text-decoration: none;
   font-weight: 500;
+  position: relative;
 }
 .nav-contact:hover,
 .nav-contact:focus {
   color: var(--blue);
   text-decoration: underline;
 }
-
+.nav-contact:hover:after,
+.nav-contact:active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 40px;
+  left: 0;
+  height: 5px;
+  border-radius: 2px;
+  background-color: var(--blue);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+}
 .nav-link:hover,
 .nav-link:focus {
   color: var(--blue);
 }
+
 .nav-icon__item {
   width: 16px;
   height: 16px;
@@ -158,7 +185,7 @@
   justify-content: center;
   gap: 30px;
   list-style: none;
-  padding-bottom: 94px;
+  margin-bottom: 94px;
 }
 
 .about-us__icon {
@@ -184,8 +211,16 @@
 }
 
 /*What we do section style*/
+.what-we-do {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  padding-left: 0;
+}
 .custom-h2 {
   padding-top: 0;
+  margin-bottom: 50px;
   text-align: center;
   font-size: 36px;
   font-weight: 700;
@@ -193,16 +228,29 @@
   letter-spacing: 0.03em;
 }
 .img-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
+  position: relative;
 }
+.box-name {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: var(--white);
+  background-color: #2f303acc;
+  text-align: center;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.41px;
+  letter-spacing: 0.03em;
+  padding: 10px 0;
+}
+
 /*Team section style*/
 .team-section {
   padding: 94px 0;
   background-color: var(--light-grey);
 }
+
 .team-section__cards {
   display: flex;
   gap: 30px;
@@ -482,12 +530,14 @@
 .our-projects-item {
   background-color: var(--white-color);
   border-bottom: 1px solid var(--border-color);
+  position: relative;
 }
 .our-projects-item:hover,
 .our-projects-item:hover {
   box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16),
     0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
 }
+
 .our-projects__title {
   font-size: 18px;
   font-weight: 700;
@@ -500,6 +550,7 @@
   line-height: 30px;
   color: var(--secondary-text-color);
 }
+
 /*Footer section style*/
 .footer-section {
   padding: 60px 0;
@@ -534,4 +585,41 @@
 }
 .footer-section .logo-link p {
   color: var(--white);
+}
+/* Style pentru modal */
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+[data-modal] {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.is-hidden [data-modal-content] {
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+[data-modal-content] {
+  width: 528px;
+  height: 581px;
+  background-color: var(--white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition-duration: 1s;
+  padding: 20px;
+}
+
+[data-modal-close] {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
